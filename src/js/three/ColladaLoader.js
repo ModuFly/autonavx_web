@@ -5,6 +5,7 @@
 
 THREE.ColladaLoader = function () {
 
+	console.log("WhaAATT!");
 	var COLLADA = null;
 	var scene = null;
 	var daeScene;

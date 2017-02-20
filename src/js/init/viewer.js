@@ -367,8 +367,9 @@ define(["jquery", "THREE", "THREE/TrackballControls", "THREE/ColladaLoader"], fu
 			var model = result.scene;
 			model.rotation.z = -Math.PI * 0.5;
 
-			//drone.add(covariance2d);
+			drone.add(covariance2d);
 			if(has_webgl) {
+
 				drone.add(model);
 			}
 			

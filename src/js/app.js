@@ -41,7 +41,7 @@ requirejs.config({
 	paths: {
 		'static': '../static/test',
 		'mathjs': 'math.min',
-		'THREE': 'three.min',
+		'THREE': 'three/three.min',
 		'jquery': 'jquery.min',
 		'THREE/TrackballControls': 'three/TrackballControls',
 		'THREE/ColladaLoader': 'three/ColladaLoader',

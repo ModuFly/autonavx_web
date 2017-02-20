@@ -10,7 +10,9 @@ Run the following commands in the autonavx_web folder:
 
 ```shell
 npm install
+npm install -g bower
 bower install
+npm install -g grunt-cli 
 grunt shell:make_skulpt
 grunt
 ```
