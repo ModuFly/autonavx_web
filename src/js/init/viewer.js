@@ -359,14 +359,15 @@ define(["jquery", "THREE", "THREE/TrackballControls", "THREE/ColladaLoader"], fu
 		
 		var drone = undefined;
 		var drone_motors = [];
-		loader.load('assets/ardrone2.dae', function(result) {
+		
+		loader.load('assets/ardrone2.dae', function(result) {//'assets/ardrone2.dae'
 			console.log("loaded drone model");
 			drone = new THREE.Object3D();
 			drone.add(createAxis())
 			drone.rotation.order = 'ZYX';
 			var model = result.scene;
 			model.rotation.z = -Math.PI * 0.5;
-
+			// model.scale.set(5,5,5)
 			drone.add(covariance2d);
 			if(has_webgl) {
 
