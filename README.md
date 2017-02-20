@@ -18,3 +18,9 @@ grunt
 ```
 
 Open http://localhost:8000/ to view a list of all exercise files.
+
+Press play to start simulation and execute plan commands defined in the example python script.
+
+
+Inline-style: 
+![alt text](https://github.com/ModuFly/autonavx_web/raw/dev/gifs/autonavx.gif "Example")
