@@ -367,7 +367,7 @@ define(["jquery", "THREE", "THREE/TrackballControls", "THREE/ColladaLoader"], fu
 			drone.rotation.order = 'ZYX';
 			var model = result.scene;
 			model.rotation.z = -Math.PI * 0.5;
-			// model.scale.set(5,5,5)
+			// model.scale.set(700,700,700)
 			drone.add(covariance2d);
 			if(has_webgl) {
 

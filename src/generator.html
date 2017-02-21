@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Generating Python</title>
+  <script src="js/blockly/blockly_compressed.js"></script>
+  <script src="js/blockly/blocks_compressed.js"></script>
+  <script src="js/blockly/python_compressed.js"></script>
+  <script src="js/blocks.js"></script>
+  
+  <script src="js/blockly/msg/js/en.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+  </style>
+</head>
+<body>
+  <h1><a href="https://developers.google.com/blockly/">Blockly</a> </h1>
+
+  <p>Generating a mission plan with Blockly.</p>
+
+  <p>
+    <button onclick="showCode()">Show Python</button>
+    <button onclick="showDom()">Show Dom</button>
+    <button onclick="runCode()">Run Python</button>
+
+  </p>
+
+  <div id="blocklyDiv" style="height: 640px; width: 1024px;"></div>
+
+  <xml id="toolbox" style="display: none">
+
+    <category name="Commands">
+      <block type="drone_move">
+        <value name="VALUE">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="drone_turn">
+        <value name="VALUE">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+    </category>
+
+
+<!--     <category name="Logic">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+    </category> -->
+<!--     <category name="Loops">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+    </category> -->
+    <category name="Math">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+    </category>
+    <category name="Text">
+      <block type="text"></block>
+      <block type="text_length"></block>
+      <block type="text_print"></block>
+    </category>
+  </xml>
+
+  <xml id="startBlocks" style="display: none">
+    
+    <block type="drone_move" x="272" y="53">
+                  <field name="DIR">right</field>
+                  <value name="VALUE">
+                    <block type="math_number">
+                      <field name="NUM">1</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="drone_turn">
+                      <field name="DIR">turn_left</field>
+                      <value name="VALUE">
+                        <block type="math_number">
+                          <field name="NUM">45</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="drone_move">
+                          <field name="DIR">forward</field>
+                          <value name="VALUE">
+                            <block type="math_number">
+                              <field name="NUM">1.4</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="drone_turn">
+                              <field name="DIR">turn_right</field>
+                              <value name="VALUE">
+                                <block type="math_number">
+                                  <field name="NUM">1</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="drone_move">
+                                  <field name="DIR">right</field>
+                                  <value name="VALUE">
+                                    <block type="math_number">
+                                      <field name="NUM">1</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="drone_turn">
+                                      <field name="DIR">turn_left</field>
+                                      <value name="VALUE">
+                                        <block type="math_number">
+                                          <field name="NUM">45</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="drone_move">
+                                          <field name="DIR">forward</field>
+                                          <value name="VALUE">
+                                            <block type="math_number">
+                                              <field name="NUM">0.7</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="drone_turn">
+                                              <field name="DIR">turn_right</field>
+                                              <value name="VALUE">
+                                                <block type="math_number">
+                                                  <field name="NUM">90</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="drone_move">
+                                                  <field name="DIR">forward</field>
+                                                  <value name="VALUE">
+                                                    <block type="math_number">
+                                                      <field name="NUM">0.7</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="drone_turn">
+                                                      <field name="DIR">turn_left</field>
+                                                      <value name="VALUE">
+                                                        <block type="math_number">
+                                                          <field name="NUM">45</field>
+                                                        </block>
+                                                      </value>
+                                                      <next>
+                                                        <block type="drone_move">
+                                                          <field name="DIR">forward</field>
+                                                          <value name="VALUE">
+                                                            <block type="math_number">
+                                                              <field name="NUM">1</field>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="drone_turn">
+                                                              <field name="DIR">turn_right</field>
+                                                              <value name="VALUE">
+                                                                <block type="math_number">
+                                                                  <field name="NUM">45</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="drone_move">
+                                                                  <field name="DIR">backward</field>
+                                                                  <value name="VALUE">
+                                                                    <block type="math_number">
+                                                                      <field name="NUM">1.4</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <next>
+                                                                    <block type="drone_turn">
+                                                                      <field name="DIR">turn_left</field>
+                                                                      <value name="VALUE">
+                                                                        <block type="math_number">
+                                                                          <field name="NUM">45</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <next>
+                                                                        <block type="drone_move">
+                                                                          <field name="DIR">forward</field>
+                                                                          <value name="VALUE">
+                                                                            <block type="math_number">
+                                                                              <field name="NUM">1</field>
+                                                                            </block>
+                                                                          </value>
+                                                                        </block>
+                                                                      </next>
+                                                                    </block>
+                                                                  </next>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+  </xml>
+
+  <script>
+
+
+    var workspace = Blockly.inject('blocklyDiv',
+        {media: 'assets/generator/',
+         toolbox: document.getElementById('toolbox')});
+    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
+                               workspace);
+
+    function showCode() {
+      // Generate Python code and display it.
+      Blockly.Python.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.Python.workspaceToCode(workspace);
+      alert(code);
+    }
+
+    function showDom() {
+      // Generate Python code and display it.
+      Blockly.Python.INFINITE_LOOP_TRAP = null;
+      var xmlDom = Blockly.Xml.workspaceToDom(workspace);
+      var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+      alert(xmlText);
+    }
+
+    // function runCode() {
+    //   // Generate Python code and run it.
+    //   window.LoopTrap = 1000;
+    //   Blockly.Python.INFINITE_LOOP_TRAP =
+    //       'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+    //   var code = Blockly.Python.workspaceToCode(workspace);
+    //   Blockly.Python.INFINITE_LOOP_TRAP = null;
+    //   try {
+    //     eval(code);
+    //   } catch (e) {
+    //     alert(e);
+    //   }
+    // }
+  </script>
+
+</body>
+</html>
