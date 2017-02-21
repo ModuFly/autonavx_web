@@ -23,6 +23,7 @@ Press play to start simulation and execute plan commands defined in the example 
 
 
 ![alt text](https://github.com/ModuFly/autonavx_web/raw/dev/gifs/autonavx.gif "Example")
+![alt text](https://github.com/ModuFly/autonavx_web/raw/dev/gifs/autonavx_blockly.gif "Example 2")
 
 
 ## Example
